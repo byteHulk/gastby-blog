@@ -1,4 +1,4 @@
-# [hulk's blog](https://huangbowen.cn/blog)
+# [yunyi's blog](https://huangbowen.cn/blog)
 
 My personal blog. 
 

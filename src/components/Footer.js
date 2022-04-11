@@ -11,7 +11,7 @@ const Footer = _ => {
         textAlign:'center'
       }}
     >
-      <p>2019-{new Date().getFullYear()} Hulk's Blog</p>
+      <p>2019-{new Date().getFullYear()} yunyi's Blog</p>
       <p>
         可通过{" "}
         <a href="/rss.xml" target="_blank" rel="noopener noreferrer">

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `yunyi's Blog`,
     description: `A blog by yunyi`,
-    author: `hulk`,
+    author: `yunyi`,
     siteUrl: `http://yunyi.link/`,
   },
   pathPrefix: `/`,
@@ -127,7 +127,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Hulk's Blog RSS Feed",
+            title: "yunyi's Blog RSS Feed",
           },
         ],
       },

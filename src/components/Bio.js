@@ -2,7 +2,7 @@
  * @Author: HuangBoWen
  * @Date: 2021-07-20 17:10:42
  * @LastEditors: HuangBoWen
- * @LastEditTime: 2022-04-11 11:39:47
+ * @LastEditTime: 2022-04-11 11:54:25
  * @Description: 
  */
 /** @jsx jsx */
@@ -21,12 +21,12 @@ const Bio = () => {
     >
       <img
         src={profilePic}
-        alt={`Hulk`}
+        alt={`yunyi`}
         css={{
           marginRight: rhythm(1 / 2),
           marginBottom: rhythm(1),
           width: rhythm(5),
-          // height: rhythm(2),
+          height: rhythm(5),
           borderRadius: "50%",
         }}
       />
@@ -37,7 +37,7 @@ const Bio = () => {
       >
         <p>
           我叫☁️艺
-          (Hulk)，1997年出生于张家口。热爱教育，历史。平时也会做一些户外运动。2013年起学习编程，2015年
+          (yunyi)，1997年出生于张家口。热爱教育，历史。平时也会做一些户外运动。2013年起学习编程，2015年
           "入坑" 前端至今。
         </p>
         <p>
