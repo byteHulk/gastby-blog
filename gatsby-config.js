@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Hulk's Blog`,
-    description: `A blog by Hulk`,
+    title: `yunyi's Blog`,
+    description: `A blog by yunyi`,
     author: `hulk`,
-    siteUrl: `http://huangbowen.cn/blog/`,
+    siteUrl: `http://yunyi.link/`,
   },
-  pathPrefix: `/blog`,
+  pathPrefix: `/`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
