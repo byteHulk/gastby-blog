@@ -5,7 +5,29 @@
     spoiler: 
 ---
 
-关于this的指向问题，我通过查阅资料和阅读文章总结了判断this指向的几个优先级, 箭头函数 =》new关键字 =》 bind方法 =》apply和call方法 =》 函数作为对象的成员变量被调用，按照优先级来判断this，多个规则并用取优先级高的那个规则来判断
+```js
+var bar = {
+    myName:"time.geekbang.com",
+    printName: function () {
+        console.log(myName)
+    }    
+}
+function foo() {
+    let myName = "极客时间"
+    return bar.printName
+}
+let myName = "极客邦"
+let _printName = foo()
+_printName()
+bar.printName()
+```
+
+在 printName 函数里面使用的变量 myName 是属于全局作用域下面的，所以最终打印出来的值都是“极客邦”。这是因为 JavaScript 语言的作用域链是由词法作用域决定的，而词法作用域是由代码结构来确定的。
+
+在对象内部的方法中使用对象内部的属性是一个非常普遍的需求。但是 JavaScript 的作用域机制并不支持这一点，基于这个需求，JavaScript 又搞出来另外一套 this 机制。
+
+![](https://static001.geekbang.org/resource/image/b3/8d/b398610fd8060b381d33afc9b86f988d.png?wh=1142*615)
+
 
 ### arrow function的this指向
 箭头函数因为其内部 this 的值无法被改变，它与 **创建** 箭头函数时上下文的this指向相同
@@ -111,7 +133,29 @@ func();
 - 在浏览器里，this 指向 Window。
 - 在 Node.js 里，this指向 Global
 
+### this 的设计缺陷以及应对方案
+- 嵌套函数中的 this 不会从外层函数中继承
+```js
+var myObj = {
+  name : "极客时间", 
+  showThis: function(){
+    console.log(this)
+    function bar(){console.log(this)}
+    bar()
+  }
+}
+myObj.showThis()
+```
 
+- 普通函数中的 this 默认指向全局对象。
+
+    - 不过这个设计也是一种缺陷，因为在实际工作中，我们并不希望函数执行上下文中的 this 默认指向全局对象，因为这样会打破数据的边界，造成一些误操作。如果要让函数执行上下文中的 this 指向某个对象，最好的方式是通过 call 方法来显示调用。
+
+  - 这个问题可以通过设置 JavaScript 的“严格模式”来解决。在严格模式下，默认执行一个函数，其函数的执行上下文中的 this 值是 undefined，这就解决上面的问题了。
+
+<!-- 关于this的指向问题，我通过查阅资料和阅读文章总结了判断this指向的几个优先级, 箭头函数 =》new关键字 =》 bind方法 =》apply和call方法 =》 函数作为对象的成员变量被调用，按照优先级来判断this，多个规则并用取优先级高的那个规则来判断 -->
+
+<!-- 
 ### 非/严格模式
 在**严格模式**下，this 可以是 undefined 或 null。而在**非严格模式**下，如果 this 指向是 undefined 或 null，那么 this 会指向全局对象。
 
@@ -128,4 +172,4 @@ let func = obj.func;
 func();
 
 // undefined
-```
+``` -->

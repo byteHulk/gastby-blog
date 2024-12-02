@@ -1,5 +1,5 @@
 ---
-    title: 颜色透明度16进制对照表 ？
+    title: 颜色透明度16进制对照表
     date: 2021-10-15
     tags: ['文章']
     spoiler: dddddd
