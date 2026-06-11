@@ -4,6 +4,9 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "gatsby": "^3.9.1",
@@ -35,12 +38,15 @@
   "devDependencies": {
     "prettier": "2.3.2"
   },
+  "resolutions": {
+    "postcss": "8.2.15"
+  },
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

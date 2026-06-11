@@ -1,0 +1,23 @@
+{
+  "framework": "gatsby",
+  "installCommand": "yarn install --frozen-lockfile",
+  "buildCommand": "yarn build",
+  "outputDirectory": "public",
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/:path*",
+      "permanent": false
+    }
+  ]
+}

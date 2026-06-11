@@ -92,6 +92,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            spoiler
             tags
           }
           fields {
